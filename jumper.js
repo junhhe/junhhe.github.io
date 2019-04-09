@@ -6,7 +6,7 @@ function jumper() {
       this.velocity = 0; // speed of the gravity
       
       this.show = function() {
-        image(img,this.x,this.y);
+        image(img, this.x,this.y);
       }
       this.move = function(){
         if ((keyIsDown(65)) && (this.x > 50)){

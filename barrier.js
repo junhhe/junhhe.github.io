@@ -10,8 +10,8 @@ function barrier() {
           this.p=0;
 
       this.show = function() {
-        fill(color('blue'));
-        rect(this.x,this.y,this.width,this.height);
+        
+        image(img2, this.x,this.y);
       }
       this.move = function(){
       this.x -= 10;
@@ -41,8 +41,8 @@ function barrier() {
       this.velocity = 0; // speed of the gravity
       
       this.show = function() {
-        fill(color('purple'));
-        rect(this.x,this.y,this.width,this.height);
+                image(img3, this.x,this.y);
+
       }
       this.move = function(){
       this.x -= 10;
