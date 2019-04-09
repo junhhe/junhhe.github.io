@@ -45,9 +45,12 @@
 }
      function setup() {
          createCanvas(w,h);
-         image(img, 50px, 50px);
-         image(img2, 50px, 50px);
-         image(img3, 50px, 50px);
+         img.loadPixels();
+      img.resize(50, 50);
+      img2.loadPixels(w,h);
+      img2.resize(50,50);
+     img3.loadPixels(w,h);
+      img3.resize(50,50);
     }
     
     function draw() {
