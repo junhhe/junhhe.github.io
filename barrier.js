@@ -1,7 +1,7 @@
 
 function barrier() {
-  this.width = (Math.random()*500);
-  this.height = (Math.random()*500);
+  this.width = 500;
+  this.height = 500;
   this.x = w + this.width;
   this.y = Math.floor((Math.random() * h)+10);
  this.gravity = 0; // the force pf gravity
@@ -32,8 +32,8 @@ function barrier() {
     
     
     function barrier2() {
-  this.width = (Math.random()*200);
-  this.height = (Math.random()*500);
+  this.width = 500;
+  this.height = 500;
   this.x = w + this.width;
   this.y = Math.floor((Math.random() * h)+10);
  this.gravity = 0; // the force pf gravity
