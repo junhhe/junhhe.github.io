@@ -41,17 +41,21 @@
     let img4;
     function preload() {
   img = loadImage('human.jpeg');
-  img2 = loadImage('bird.jpg');
+  img2 = loadImage('bird.png');
   img3 = loadImage('enemy.png');
-  img4 = loadImage('background.jpg');
+    img4 = loadImage('background.jpg');
 
 }
      function setup() {
          createCanvas(w,h);
-         image(img, 50, 50);
-         image(img2, 50, 50);
-         image(img3, 50, 50);
-        image(img4, w, h);
+         img.loadPixels();
+      img.resize(100, 100);
+      img2.loadPixels(w,h);
+      img2.resize(300,300);
+     img3.loadPixels(w,h);
+      img3.resize(200,200);
+           img4.loadPixels(w,h);
+
     }
     
     function draw() {
@@ -77,15 +81,12 @@
         noLoop();
       }
       
-      hit = collideRectCircle(platform.x,platform.y,platform.width,platform.height,jumper.x,jumper.y,50);
+      hit = collideRectCircle(platform.x,platform.y,platform.width,platform.height,jumper.x,jumper.y,100);
       if (hit === true) {
         jumper.velocity = -10;
       }
        
-       hit = collideRectRect(platform.x,platform.y,platform.width,platform.height,barrier.x,barrier.y,barrier.width,barrier.height);
-      if (hit === true) {
-        barrier.x -= 20;
-      }
+   
     }
     
     
