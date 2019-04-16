@@ -11,7 +11,7 @@ function barrier() {
 
       this.show = function() {
         
-        image(img2, this.width,this.height);
+        image(img2, 100,100);
       }
       this.move = function(){
       this.x -= 10;
@@ -41,7 +41,7 @@ function barrier() {
       this.velocity = 0; // speed of the gravity
       
       this.show = function() {
-                image(img3, this.width,this.height);
+                image(img3, 100,100);
 
       }
       this.move = function(){
