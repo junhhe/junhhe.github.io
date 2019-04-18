@@ -38,7 +38,7 @@ function barrier() {
  this.gravity = 0; // the force pf gravity
       //this.lift = -10; //opposing force
       this.velocity = 0; // speed of the gravity
-      this.p=0;
+      this.p=1;
       
       this.show = function() {
                 image(img3, this.x,this.y);
