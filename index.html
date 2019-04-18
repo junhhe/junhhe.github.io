@@ -76,11 +76,13 @@
       hit = collideRectCircle(barrier.x,barrier.y, barrier.width,barrier.height,jumper.x, jumper.y,100);
       if (hit === true) {
         noLoop();
+        window.alert('game over');
       }
       
       hit = collideRectCircle(barrier2.x,barrier2.y, barrier2.width,barrier2.height,jumper.x, jumper.y,100);
       if (hit === true) {
         noLoop();
+        window.alert('game over');
       }
       
       hit = collideRectCircle(platform.x,platform.y,platform.width,platform.height,jumper.x,jumper.y,150);
