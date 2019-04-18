@@ -1,7 +1,7 @@
 
 function barrier() {
-  this.width = 100;
-  this.height = 100;
+  this.width = (Math.random()*500);
+  this.height = (Math.random()*500);
   this.x = w + this.width;
   this.y = Math.floor((Math.random() * h)+10);
  this.gravity = 0; // the force pf gravity
@@ -11,7 +11,7 @@ function barrier() {
 
       this.show = function() {
         
-        image(img2, 100,100);
+        image(img2, this.x,this.y);
       }
       this.move = function(){
       this.x -= 10;
@@ -32,8 +32,8 @@ function barrier() {
     
     
     function barrier2() {
-  this.width = 100;
-  this.height = 100;
+  this.width = (Math.random()*200);
+  this.height = (Math.random()*500);
   this.x = w + this.width;
   this.y = Math.floor((Math.random() * h)+10);
  this.gravity = 0; // the force pf gravity
@@ -41,7 +41,7 @@ function barrier() {
       this.velocity = 0; // speed of the gravity
       
       this.show = function() {
-                image(img3, 100,100);
+                image(img3, this.x,this.y);
 
       }
       this.move = function(){
