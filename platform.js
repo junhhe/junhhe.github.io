@@ -5,8 +5,7 @@ function platform() {
   this.y = 250;
       
       this.show = function() {
-        fill(color('green'));
-        rect(this.x,this.y,this.width,this.height);
+        image(img5, this.x,this.y);
       }
       
       
