@@ -35,6 +35,7 @@
     var platform = new platform();
     var barrier2 = new barrier2();
     var hit = false;
+    var button;
     let img;
     let img2;
     let img3;
@@ -77,6 +78,10 @@
       if (hit === true) {
         noLoop();
         window.alert('game over');
+         button= createButton("restart");
+        button.position(500,500);
+         button.mousePressed(reload);
+         
       }
       
       hit = collideRectCircle(barrier2.x,barrier2.y, barrier2.width,barrier2.height,jumper.x, jumper.y,100);
