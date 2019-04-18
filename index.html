@@ -73,12 +73,12 @@
       barrier2.move();
       platform.show();
       //platform.update();
-      hit = collideRectCircle(barrier.x,barrier.y, barrier.width,barrier.height,jumper.x, jumper.y,10);
+      hit = collideRectCircle(barrier.x,barrier.y, barrier.width,barrier.height,jumper.x, jumper.y,100);
       if (hit === true) {
         noLoop();
       }
       
-      hit = collideRectCircle(barrier2.x,barrier2.y, barrier2.width,barrier2.height,jumper.x, jumper.y,10);
+      hit = collideRectCircle(barrier2.x,barrier2.y, barrier2.width,barrier2.height,jumper.x, jumper.y,100);
       if (hit === true) {
         noLoop();
       }
