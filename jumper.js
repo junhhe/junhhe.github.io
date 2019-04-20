@@ -23,8 +23,8 @@ function jumper() {
         this.velocity += this.gravity;
         this.y += this.velocity;
         this.velocity *= 0.9;
-        if (this.y > h) {
-          this.y = h; // this is the final height
+        if (this.y > (h - 75)) {
+          this.y = (h - 75); // this is the final height
           this.velocity = -10;
         }
         if (this.y < 0){
@@ -32,9 +32,5 @@ function jumper() {
           this.velocity = 0;
         }
       }
-    } function keyPressed() {
-      if (keyCode === 32) {
-        jumper.up();
-      }
-    }
+    } 
     

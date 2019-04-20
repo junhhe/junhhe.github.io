@@ -1,0 +1,119 @@
+<html>
+  <head>
+            <script src="p5.min.js"></script>
+            <script src="jumper.js"></script>
+            <script src="barrier.js"></script>
+            <script src="p5.collide2d.min.js"></script>
+            <script src="platform.js"></script>
+            <script language="javascript" type="text/javascript" src="p5.sound.min.js"></script>
+
+   <style>
+    body{
+      margin:0;
+      padding:0;
+      overflow:hidden;
+    }
+    
+     #points {
+        width:30px;
+        height:50px;
+        position: absolute;
+  left: 0px;
+  top: 0px;
+        color:orange;
+    }
+  </style>
+  </head>
+  <body>
+    <div id="points">
+    <h1 id="point"></h1>
+  </div>
+    <script>
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var jumper = new jumper();
+    var barrier = new barrier();
+    var platform = new platform();
+    var barrier2 = new barrier2();
+    var hit = false;
+    var button;
+    let img;
+    let img2;
+    let img3;
+    let img4;
+      let img5;
+      var airplaneSound;
+    function preload() {
+  img = loadImage('airplane.png');
+  img2 = loadImage('star.png');
+  img3 = loadImage('star.png');
+    img4 = loadImage('background.png');
+      img5 = loadImage('cloud.png');
+      airplaneSound = loadSound("airplaneSound.mp3");
+}
+     function setup() {
+         createCanvas(w,h);
+         img.loadPixels();
+      img.resize(100, 100);
+      img2.loadPixels(w,h);
+      img2.resize(100,100);
+     img3.loadPixels(w,h);
+      img3.resize(100,100);
+         img4.loadPixels(w,h);
+       img5.loadPixels(w,h);
+      img5.resize(200,200);
+      airplaneSound.play();
+    }
+    
+    function draw() {
+      background(img4);
+      jumper.show();
+      jumper.update();
+      jumper.move();
+      barrier.show();
+      barrier.update();
+      barrier.move();
+      barrier2.show();
+      barrier2.update();
+      barrier2.move();
+      platform.show();
+      //platform.update();
+      hit = collideRectCircle(barrier.x,barrier.y, barrier.width,barrier.height,jumper.x, jumper.y,100);
+      if (hit === true) {
+        noLoop();
+        airplaneSound.stop();
+        window.alert("Game Over. Press 'r' to play again.");
+         
+      }
+      
+      hit = collideRectCircle(barrier2.x,barrier2.y, barrier2.width,barrier2.height,jumper.x, jumper.y,100);
+      if (hit === true) {
+        noLoop();
+        airplaneSound.stop();
+        window.alert("Game Over. Press 'r' to play again.");
+      }
+      
+      hit = collideRectCircle(platform.x,platform.y,platform.width,platform.height,jumper.x,jumper.y,150);
+      if (hit === true) {
+        jumper.velocity = -10;
+      }
+       
+   
+    }
+    function replay() {
+      window.location.reload();
+    }
+    function keyPressed() {
+      if (keyCode == 82) {
+        replay();
+      }
+      if (keyCode === 32) {
+      jumper.up();
+    }
+    }
+
+    
+    
+    </script>
+  </body>
+</html>
