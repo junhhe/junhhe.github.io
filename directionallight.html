@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script src="p5/p5.min.js"></script>
+  </head>
+<body>
+  <script>
+  var img;
+  function preload() {
+    img = loadImage("donut.jpg");
+  }
+    function setup() {
+      createCanvas(window.innerWidth,window.innerHeight,WEBGL);
+    }
+    function draw(){
+      background(255);
+      var locX = mouseX - width / 2;
+      var locY = mouseY - height / 2;
+      //directionallight(red,green,blue,x-axis,y-axis,z-axis)
+      pointLight(255,-locX,-locY,width,height); // last value is sensitivity  //instead of directional light you can say pointlight
+      specularMaterial(255);
+      //noStroke();
+      texture(img);
+      //torus(radius of the ring, the radius, detailX, detailY)
+      torus(200,64,30,30);
+    }
+  </script>
+</body>
+</html>
