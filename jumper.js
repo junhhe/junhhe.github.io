@@ -8,14 +8,14 @@ function jumper() {
       this.show = function() {
         image(img, this.x,this.y);
       }
-      /*this.move = function(){
+      this.move = function(){
         if ((keyIsDown(65)) && (this.x > 50)){
       this.x -= 10;
       }
        if ((keyIsDown(68)) && (this.x < w-50)) {  // need both condition inorder to work
         this.x += 10;
        }
-      }*/
+      }
       this.up = function(){
         this.velocity += this.lift; //when im going up im oppose the velocity
       }
